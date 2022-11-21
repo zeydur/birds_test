@@ -1,0 +1,49 @@
+---
+title: "Reproducibility example: Birds"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(here)
+library(tidyverse)
+```
+
+## Introduction
+
+Write some text here about what you are doing. Show the code for reading in the `birds.csv` file. Explain the data and where it is from.
+
+```{r code_block1}
+# add some code
+```
+
+## Plotting size relationships
+
+Here I want you to plot the relationship between [tarsus length](https://en.wikipedia.org/wiki/Bird_measurement#Tarsus) and [wing length](https://en.wikipedia.org/wiki/Bird_measurement#Wing). Write some text explaining the plot. Show your code.
+
+Are there any outliers with a very long tarsus but very short wings? Can you identify them? Hint, you can use `filter` to do this, `pull(Species2_ebird)` will give the species name from the [eBird database](https://ebird.org/home) - but you can use any of the species names columns for this.
+
+## Write a function
+
+Nearly all of the phenotypic measurements in this dataset are in millimetres. Write a function to convert them to centimetres. Show the code below. 
+
+## Some bird queries
+
+Which bird has the longest beak? Does it differ between culmen (from base of beak entering skull) or nares (from the nostril) measurements? Show the code below and make sure you return **only the top hits** from each measurement - nb. `head()` will help here.
+
+## Crows, ravens and magpies
+
+Filter your dataset to include only common crows (*Corvus corone*), ravens (*Corvus corax*) and magpies (*Pica pica*). The code below is intended as a hint:
+
+```{r code_block2, echo = TRUE, eval = FALSE}
+filter(species == "A" | species == "B" | species == "C") 
+```
+
+Now draw a `ggplot2` boxplot of the beak length and depth distributions of these samples. Which species has the deepest beak? And which has the longest? **NB. Use culmen length here**
+
+
+
+
